@@ -58,7 +58,6 @@ function validar() {
     viavel.className = "negativo"
     aposta1.value = ""
     aposta2.value = ""
-    apostaTotal.value = ""
     retorno1.textContent = ""
     retorno2.textContent = ""
     return

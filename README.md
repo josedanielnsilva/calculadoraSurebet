@@ -42,7 +42,7 @@ Clone o repositório:
 
 ```bash
 git clone https://github.com/josedanielnsilva/calculadoraSurebet.git
-
+```
 ## Autor
 
 Desenvolvido por [José Daniel Silva](https://github.com/josedanielnsilva).

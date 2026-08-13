@@ -183,7 +183,7 @@ input:focus {
   border-radius: 12px;
 }
 
-.resultado span {
+.resultado > span {
   color: #475569;
   font-size: 0.9rem;
 }
