@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Calculadora Surebet</title>
   </head>
   <body>
-    Odd1:<input type="number" min="1" id="odd1" /><br>
+    Odd1:<input type="number" min="1" id="odd1" /><br />
     <div id="erroOdd1" class="erro"></div>
-    Odd2:<input type="number" min="1" id="odd2"/><br>
+    Odd2:<input type="number" min="1" id="odd2" /><br />
     <div id="erroOdd2" class="erro"></div>
     Surebet:
     <div id="surebet"></div>
-    Valor1:<input type="number" id="valor1" /><br>
+    <div id="erroValores" class="negativo"></div>
+    Valor1:<input type="number" id="valor1" min="0" /><br />
     <div id="erroValor1" class="erro"></div>
-    Valor2:<input type="number" id="valor2" /><br>
+    Valor2:<input type="number" id="valor2" min="0" /><br />
     <div id="erroValor2" class="erro"></div>
-    Total apostado:
-    <div id="valorApostado"></div>
+    <label for="valorTotal">Valor total:</label>
+    <input type="number" id="valorApostado" min="0" /><br />
     Lucrocaso1:
     <div id="lucrocaso1"></div>
     Lucrocaso2:

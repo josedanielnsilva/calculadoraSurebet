@@ -18,3 +18,12 @@ border-radius: 20px;
   margin: 5px 0;
   text-align: center;
 }
+.positivo {
+  color: green;
+  font-weight: bold;
+}
+
+.negativo {
+  color: red;
+  font-weight: bold;
+}
