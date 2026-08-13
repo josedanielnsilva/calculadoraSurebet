@@ -1,29 +1,246 @@
-input {
-  border-radius: 8px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter, Arial, Helvetica, sans-serif;
+
+  color: #1e293b;
+  background-color: #eef2f7;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.calculadora {
+  width: 100%;
+  max-width: 720px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+}
+
+.cabecalho {
+  padding: 32px;
+  color: #ffffff;
   text-align: center;
-  padding: 6px 10px;
-  margin: 5px 0;
-  width: 80px;
+  background: linear-gradient(135deg, #172554, #2563eb);
 }
-input:hover{
-border: solid black 2px;
-border-radius: 20px;
+
+.cabecalho h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
 }
-.erro{
-  background-color: rgba(161, 3, 3, 0.8);
-  color: white;
-  border-radius: 8px;
+
+.cabecalho p {
+  color: #dbeafe;
+  line-height: 1.5;
+}
+
+.secao {
+  padding: 28px 32px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.secao:last-child {
+  border-bottom: none;
+}
+
+.secao h2 {
+  margin-bottom: 20px;
+  color: #172554;
+  font-size: 1.2rem;
+}
+
+.instrucao {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+}
+
+input:hover {
+  border-color: #2563eb;
+}
+
+input:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.campo-moeda {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.campo-moeda:hover{
+    border-color: #2563eb;
+}
+.campo-moeda:focus-within {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.campo-moeda span {
+  padding-left: 14px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.campo-moeda input {
+  border: none;
+  box-shadow: none;
+}
+
+.campo-moeda input:focus {
+  box-shadow: none;
+}
+
+.campo-total {
+  max-width: 320px;
+  margin: 24px auto 0;
+}
+
+.resultado-surebet {
+  margin-top: 24px;
+  padding: 18px;
+  text-align: center;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.resultado-titulo {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+}
+
+.resultado span {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.resultado strong {
+  color: #15803d;
+  font-size: 1.35rem;
+}
+
+.erro {
   width: fit-content;
   padding: 6px 10px;
-  margin: 5px 0;
-  text-align: center;
+  color: #ffffff;
+  background-color: #b91c1c;
+  border-radius: 6px;
+  font-size: 0.8rem;
 }
+
+.erro:empty {
+  display: none;
+}
+
+.erro-geral {
+  margin-bottom: 16px;
+}
+
 .positivo {
-  color: green;
-  font-weight: bold;
+  color: #15803d;
+  font-weight: 700;
 }
 
 .negativo {
-  color: red;
-  font-weight: bold;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .cabecalho,
+  .secao {
+    padding: 24px 20px;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.6rem;
+  }
+
+  .campos,
+  .resultados {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-total {
+    max-width: none;
+  }
 }

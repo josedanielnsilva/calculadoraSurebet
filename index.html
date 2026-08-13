@@ -3,27 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="style.css" />
+
     <title>Calculadora Surebet</title>
   </head>
+
   <body>
-    Odd1:<input type="number" min="1" id="odd1" /><br />
-    <div id="erroOdd1" class="erro"></div>
-    Odd2:<input type="number" min="1" id="odd2" /><br />
-    <div id="erroOdd2" class="erro"></div>
-    Surebet:
-    <div id="surebet"></div>
-    <div id="erroValores" class="negativo"></div>
-    Valor1:<input type="number" id="valor1" min="0" /><br />
-    <div id="erroValor1" class="erro"></div>
-    Valor2:<input type="number" id="valor2" min="0" /><br />
-    <div id="erroValor2" class="erro"></div>
-    <label for="valorTotal">Valor total:</label>
-    <input type="number" id="valorApostado" min="0" /><br />
-    Lucrocaso1:
-    <div id="lucrocaso1"></div>
-    Lucrocaso2:
-    <div id="lucrocaso2"></div>
+    <main class="calculadora">
+      <header class="cabecalho">
+        <h1>Calculadora Surebet</h1>
+        <p>Informe as odds e o valor que deseja utilizar como referência.</p>
+      </header>
+
+      <section class="secao">
+        <h2>Odds</h2>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="odd1">Odd da Casa 1</label>
+            <input type="number" id="odd1" min="1" inputmode="decimal" />
+            <div id="erroOdd1" class="erro"></div>
+          </div>
+          <div class="campo">
+            <label for="odd2">Odd da Casa 2</label>
+            <input type="number" id="odd2" min="1" inputmode="decimal" />
+            <div id="erroOdd2" class="erro"></div>
+          </div>
+        </div>
+
+        <div class="resultado-surebet">
+          <span class="resultado-titulo">Resultado da análise</span>
+          <div id="surebet"></div>
+        </div>
+      </section>
+
+      <section class="secao">
+        <h2>Valores das apostas</h2>
+        <p class="instrucao">
+          Altere qualquer valor para calcular automaticamente os outros.
+        </p>
+        <div id="erroValores" class="negativo erro-geral"></div>
+        <div class="campos">
+          <div class="campo">
+            <label for="valor1">Aposta na Casa 1</label>
+            <div class="campo-moeda">
+              <span>R$</span>
+              <input type="number" id="valor1" min="0" inputmode="decimal" />
+            </div>
+
+            <div id="erroValor1" class="erro"></div>
+          </div>
+          <div class="campo">
+            <label for="valor2">Aposta na Casa 2</label>
+            <div class="campo-moeda">
+              <span>R$</span>
+              <input type="number" id="valor2" min="0" inputmode="decimal" />
+            </div>
+            <div id="erroValor2" class="erro"></div>
+          </div>
+        </div>
+
+        <div class="campo campo-total">
+          <label for="valorApostado">Valor total apostado</label>
+          <div class="campo-moeda">
+            <span>R$</span>
+            <input type="number" id="valorApostado" min="0" inputmode="decimal"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao">
+        <h2>Lucro estimado</h2>
+
+        <div class="resultados">
+          <article class="resultado">
+            <span>Se o resultado 1 ocorrer</span>
+            <strong> R$ <span id="lucrocaso1"></span> </strong>
+          </article>
+
+          <article class="resultado">
+            <span>Se o resultado 2 ocorrer</span>
+            <strong> R$ <span id="lucrocaso2"></span> </strong>
+          </article>
+        </div>
+      </section>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
