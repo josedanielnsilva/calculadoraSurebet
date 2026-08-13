@@ -244,3 +244,20 @@ input:focus {
     max-width: none;
   }
 }
+.rodape {
+  padding: 20px;
+  color: #64748b;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}
